@@ -110,7 +110,7 @@ export default function Navbar() {
 
           {/* CTA Desktop */}
           <div className="hidden lg:flex items-center gap-3">
-            <Link href="/devis" className="btn-primary text-sm px-5 py-2.5">
+            <Link href="/contact" className="btn-primary text-sm px-5 py-2.5">
               ✦ Devis gratuit
             </Link>
           </div>
@@ -161,7 +161,7 @@ export default function Navbar() {
             ))}
             <div className="pt-3 border-t border-white/10">
               <Link
-                href="/devis"
+                href="/contact"
                 onClick={() => setIsMobileOpen(false)}
                 className="btn-primary w-full justify-center"
               >

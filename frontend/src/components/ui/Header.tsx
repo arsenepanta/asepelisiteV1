@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { Menu, X, ChevronDown } from "lucide-react";
 
@@ -60,8 +61,15 @@ export default function Header() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <Link href="/" className="flex items-center space-x-2">
-            <span className="text-2xl font-bold text-orange-500">Asepeli</span>
+          <Link href="/" className="flex items-center">
+            <Image
+              src="/logo.jpeg"
+              alt="Asepeli Logo"
+              width={160}
+              height={50}
+              className="object-contain"
+              priority
+            />
           </Link>
 
           {/* Desktop Nav */}
@@ -105,7 +113,7 @@ export default function Header() {
           {/* CTA */}
           <div className="hidden lg:flex items-center space-x-3">
             <Link
-              href="/devis"
+              href="/contact"
               className="bg-orange-500 text-white px-4 py-2 rounded-full text-sm font-semibold hover:bg-orange-600 transition-colors"
             >
               Demander un devis
@@ -160,7 +168,7 @@ export default function Header() {
             )
           )}
           <Link
-            href="/devis"
+            href="/contact"
             className="block mt-4 bg-orange-500 text-white px-4 py-2 rounded-full text-sm font-semibold text-center hover:bg-orange-600"
           >
             Demander un devis

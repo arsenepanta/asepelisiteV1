@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { Mail, Phone, MapPin } from "lucide-react";
 
 export default function Footer() {
@@ -30,14 +31,14 @@ export default function Footer() {
 
           {/* Colonne 1 — Logo + description + réseaux */}
           <div>
-            <Link href="/" className="flex items-center gap-2 mb-4">
-              <div className="w-10 h-10 bg-yellow-400 rounded-lg flex items-center justify-center">
-                <span className="text-gray-900 font-black text-lg">A</span>
-              </div>
-              <div>
-                <p className="font-black text-white text-sm">ASEPELI</p>
-                <p className="text-xs text-gray-400">Services Habitat</p>
-              </div>
+            <Link href="/" className="flex items-center mb-4">
+              <Image
+                src="/logo.jpeg"
+                alt="Asepeli Logo"
+                width={140}
+                height={45}
+                className="object-contain"
+              />
             </Link>
             <p className="text-sm text-gray-400 mb-6 leading-relaxed">
               Connectez-vous avec les meilleurs prestataires de services à Kinshasa et partout en RDC.
