@@ -14,6 +14,8 @@ export interface DemandeResponse {
   id: number;
   nom: string;
   telephone: string;
+  email?: string;
+  message?: string;
   service: string;
   description: string;
   adresse: string;
@@ -21,6 +23,7 @@ export interface DemandeResponse {
   statut: string;
   created_at: string;
 }
+
 
 export const api = {
   async creerDemande(data: DemandeCreate): Promise<DemandeResponse> {
