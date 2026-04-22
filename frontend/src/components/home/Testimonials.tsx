@@ -140,7 +140,7 @@ export default function Testimonials() {
           onTouchStart={() => setIsPaused(true)}
           onTouchEnd={() => setIsPaused(false)}
         >
-          <div className="bg-white rounded-2xl p-6 shadow-md border border-gray-100 min-h-[280px]">
+          <div className="bg-white rounded-2xl p-6 shadow-md border border-gray-100 min-h-fit">
             <div className="flex items-center gap-3 mb-4">
               <span className="text-4xl">{testimonials[active].avatar}</span>
               <div>

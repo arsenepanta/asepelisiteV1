@@ -95,7 +95,7 @@ export default function Packs() {
               key={pack.name}
               className={`relative rounded-2xl overflow-hidden shadow-lg flex flex-col ${
                 pack.badge === "⭐ Populaire" 
-                  ? "ring-4 ring-blue-500 scale-105 shadow-2xl" 
+                  ? "ring-4 ring-blue-500 md:scale-105 shadow-2xl" 
                   : ""
               }`}
             >

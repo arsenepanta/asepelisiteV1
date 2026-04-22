@@ -38,8 +38,8 @@ export default function Hero() {
       />
 
       {/* Decorative blobs */}
-      <div className="absolute top-20 right-10 w-96 h-96 bg-yellow-400/20 rounded-full blur-3xl" />
-      <div className="absolute bottom-20 left-10 w-64 h-64 bg-blue-300/20 rounded-full blur-3xl" />
+      <div className="absolute top-20 right-10 w-48 h-48 sm:w-96 sm:h-96 bg-yellow-400/20 rounded-full blur-3xl" />
+      <div className="absolute bottom-20 left-10 w-32 h-32 sm:w-64 sm:h-64 bg-blue-300/20 rounded-full blur-3xl" />
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-16">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -65,7 +65,7 @@ export default function Hero() {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
-              className="text-4xl sm:text-5xl lg:text-6xl font-black leading-[1.1] mb-6"
+              className="text-3xl sm:text-5xl lg:text-6xl font-black leading-[1.1] mb-6"
             >
               Votre habitat entre{" "}
               <span className="text-yellow-400">de bonnes mains</span>{" "}
