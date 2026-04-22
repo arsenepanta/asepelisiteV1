@@ -1,7 +1,5 @@
 import type { Metadata } from "next";
 import { Poppins, Playfair_Display } from "next/font/google";
-import Header from "@/components/ui/Header";
-import Footer from "@/components/ui/Footer";
 import "./globals.css";
 
 const poppins = Poppins({
@@ -28,19 +26,11 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="fr">
       <body className={`${poppins.variable} ${playfair.variable} font-poppins antialiased bg-white`}>
-        <Header />
-        <main>
-          {children}
-        </main>
-        <Footer />
+        {children}
       </body>
     </html>
   );
