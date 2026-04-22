@@ -1,142 +1,138 @@
 "use client";
 
 import Link from "next/link";
-import { Mail, Phone, MapPin, Share2, Heart } from "lucide-react";
+import { Mail, Phone, MapPin } from "lucide-react";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
 
-  const sections = [
-    {
-      title: "Services",
-      links: [
-        { label: "Électricité", href: "/services?cat=electricite" },
-        { label: "Plomberie", href: "/services?cat=plomberie" },
-        { label: "Nettoyage", href: "/services?cat=nettoyage" },
-        { label: "Rénovation", href: "/services?cat=renovation" },
-      ],
-    },
-    {
-      title: "Entreprise",
-      links: [
-        { label: "À propos", href: "/about" },
-        { label: "Blog", href: "/blog" },
-        { label: "Carrières", href: "/careers" },
-        { label: "Presse", href: "/press" },
-      ],
-    },
-    {
-      title: "Ressources",
-      links: [
-        { label: "FAQ", href: "/faq" },
-        { label: "Conditions", href: "/terms" },
-        { label: "Confidentialité", href: "/privacy" },
-        { label: "Sitemap", href: "/sitemap.xml" },
-      ],
-    },
+  const services = [
+    { label: "Plomberie", href: "/services?cat=plomberie" },
+    { label: "Électricité", href: "/services?cat=electricite" },
+    { label: "Nettoyage", href: "/services?cat=nettoyage" },
+    { label: "Rénovation", href: "/services?cat=renovation" },
+    { label: "Accompagnement", href: "/services?cat=accompagnement" },
+    { label: "IA", href: "/services?cat=ia" },
   ];
 
-  const socials = [
-    { label: "f", href: "https://facebook.com/asepeli", color: "bg-blue-600" },
-    { label: "𝕏", href: "https://twitter.com/asepeli", color: "bg-black" },
-    { label: "in", href: "https://linkedin.com/company/asepeli", color: "bg-blue-700" },
-    { label: "📷", href: "https://instagram.com/asepeli", color: "bg-pink-600" },
+  const liens = [
+    { label: "Recherche & Filtres", href: "/services" },
+    { label: "Comment ça marche", href: "/rejoindre" },
+    { label: "Service client", href: "/contact" },
+    { label: "Mentions légales", href: "/tarifs" },
+    { label: "Confidentialité", href: "/faq" },
   ];
 
   return (
-    <footer className="bg-gradient-to-b from-gray-50 to-gray-100 border-t border-gray-200">
-      {/* Main Footer */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <div className="grid md:grid-cols-5 gap-8 mb-12">
+    <footer className="bg-gray-900 text-white">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
 
-          {/* Brand */}
-          <div className="md:col-span-1">
-            <Link href="/" className="flex items-center gap-2 mb-6">
-              <div className="w-10 h-10 bg-gradient-to-br from-yellow-400 to-yellow-500 rounded-lg flex items-center justify-center">
-                <span className="text-white font-black">A</span>
+          {/* Colonne 1 — Logo + description + réseaux */}
+          <div>
+            <Link href="/" className="flex items-center gap-2 mb-4">
+              <div className="w-10 h-10 bg-yellow-400 rounded-lg flex items-center justify-center">
+                <span className="text-gray-900 font-black text-lg">A</span>
               </div>
               <div>
-                <p className="font-black text-gray-900 text-sm">ASEPELI</p>
-                <p className="text-xs text-gray-500">Services Habitat</p>
+                <p className="font-black text-white text-sm">ASEPELI</p>
+                <p className="text-xs text-gray-400">Services Habitat</p>
               </div>
             </Link>
-            <p className="text-sm text-gray-600 mb-6">
-              Connectez-vous avec les meilleurs prestataires de services à Kinshasa.
+            <p className="text-sm text-gray-400 mb-6 leading-relaxed">
+              Connectez-vous avec les meilleurs prestataires de services à Kinshasa et partout en RDC.
             </p>
-            <div className="space-y-3">
-              <div className="flex items-start gap-3">
-                <MapPin size={16} className="text-yellow-500 mt-1 flex-shrink-0" />
-                <span className="text-sm text-gray-600">Kinshasa, RDC</span>
-              </div>
-              <div className="flex items-center gap-3">
-                <Phone size={16} className="text-yellow-500 flex-shrink-0" />
-                <a href="tel:+243" className="text-sm text-gray-600 hover:text-yellow-500 transition-colors">
-                  +243 XXX XXX XXX
-                </a>
-              </div>
-              <div className="flex items-center gap-3">
-                <Mail size={16} className="text-yellow-500 flex-shrink-0" />
-                <a href="mailto:contact@asepeli.cd" className="text-sm text-gray-600 hover:text-yellow-500 transition-colors">
-                  contact@asepeli.cd
-                </a>
-              </div>
+            <div className="flex gap-3">
+              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer"
+                className="w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center hover:bg-blue-500 transition-colors">
+                <svg className="w-4 h-4 fill-white" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+              </a>
+              <a href="https://x.com" target="_blank" rel="noopener noreferrer"
+                className="w-8 h-8 bg-gray-700 rounded-full flex items-center justify-center hover:bg-gray-600 transition-colors">
+                <svg className="w-4 h-4 fill-white" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+              </a>
+              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer"
+                className="w-8 h-8 bg-blue-700 rounded-full flex items-center justify-center hover:bg-blue-600 transition-colors">
+                <svg className="w-4 h-4 fill-white" viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+              </a>
+              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer"
+                className="w-8 h-8 bg-pink-600 rounded-full flex items-center justify-center hover:bg-pink-500 transition-colors">
+                <svg className="w-4 h-4 fill-white" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path fill="none" stroke="white" strokeWidth="2" d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line fill="none" stroke="white" strokeWidth="2" x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+              </a>
             </div>
           </div>
 
-          {/* Links */}
-          {sections.map((section) => (
-            <div key={section.title}>
-              <h3 className="font-bold text-gray-900 mb-4 text-sm uppercase tracking-wider">
-                {section.title}
-              </h3>
-              <ul className="space-y-3">
-                {section.links.map((link) => (
-                  <li key={link.href}>
-                    <Link
-                      href={link.href}
-                      className="text-sm text-gray-600 hover:text-yellow-500 transition-colors"
-                    >
-                      {link.label}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
+          {/* Colonne 2 — Nos Services */}
+          <div>
+            <h3 className="font-bold text-white mb-4 text-sm uppercase tracking-wider">
+              Nos Services
+            </h3>
+            <ul className="space-y-3">
+              {services.map((s) => (
+                <li key={s.href}>
+                  <Link href={s.href} className="text-sm text-gray-400 hover:text-yellow-400 transition-colors">
+                    {s.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Colonne 3 — Liens utiles */}
+          <div>
+            <h3 className="font-bold text-white mb-4 text-sm uppercase tracking-wider">
+              Liens Utiles
+            </h3>
+            <ul className="space-y-3">
+              {liens.map((l) => (
+                <li key={l.href}>
+                  <Link href={l.href} className="text-sm text-gray-400 hover:text-yellow-400 transition-colors">
+                    {l.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Colonne 4 — Contact */}
+          <div>
+            <h3 className="font-bold text-white mb-4 text-sm uppercase tracking-wider">
+              Contact
+            </h3>
+            <ul className="space-y-4 mb-6">
+              <li className="flex items-start gap-3">
+                <MapPin size={16} className="text-yellow-400 mt-0.5 flex-shrink-0" />
+                <span className="text-sm text-gray-400">Avenue Kasa-Vubu, Kinshasa, RDC</span>
+              </li>
+              <li className="flex items-center gap-3">
+                <Phone size={16} className="text-green-400 flex-shrink-0" />
+                <a href="tel:+243" className="text-sm text-gray-400 hover:text-white transition-colors">
+                  +243 XXX XXX XXX
+                </a>
+              </li>
+              <li className="flex items-center gap-3">
+                <Mail size={16} className="text-blue-400 flex-shrink-0" />
+                <a href="mailto:contact@asepeli.cd" className="text-sm text-gray-400 hover:text-white transition-colors">
+                  contact@asepeli.cd
+                </a>
+              </li>
+            </ul>
+            <Link href="/contact"
+              className="inline-block bg-yellow-400 text-gray-900 px-5 py-2 rounded-full text-sm font-bold hover:bg-yellow-300 transition-colors">
+              Demander un devis →
+            </Link>
+          </div>
+
         </div>
 
-        {/* Divider */}
-        <div className="border-t border-gray-200 pt-8 mt-8">
-          <div className="grid md:grid-cols-2 gap-8 items-center">
-
-            {/* Socials */}
-            <div>
-              <p className="text-sm font-medium text-gray-700 mb-4">Suivez-nous</p>
-              <div className="flex gap-3">
-                {socials.map((social) => (
-                  <a
-                    key={social.label}
-                    href={social.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className={`w-10 h-10 ${social.color} rounded-lg flex items-center justify-center text-white font-bold text-sm hover:opacity-80 transition-all shadow-sm hover:shadow-md`}
-                    aria-label={social.label}
-                  >
-                    {social.label}
-                  </a>
-                ))}
-              </div>
-            </div>
-
-            {/* Copyright */}
-            <div className="text-center md:text-right">
-              <p className="text-xs text-gray-500 flex items-center justify-center md:justify-end gap-1">
-                © {currentYear} ASEPELI. Tous droits réservés. |{" "}
-                <Link href="/privacy" className="hover:text-yellow-500 transition-colors">
-                  Confidentialité
-                </Link>
-              </p>
-            </div>
+        {/* Barre du bas */}
+        <div className="border-t border-gray-700 mt-10 pt-6 flex flex-col md:flex-row items-center justify-between gap-4">
+          <p className="text-xs text-gray-500">
+            © {currentYear} ASEPELI — Tous droits réservés.
+          </p>
+          <div className="flex gap-4">
+            <Link href="/faq" className="text-xs text-gray-500 hover:text-yellow-400 transition-colors">Confidentialité</Link>
+            <Link href="/tarifs" className="text-xs text-gray-500 hover:text-yellow-400 transition-colors">Conditions d&apos;utilisation</Link>
           </div>
         </div>
       </div>
