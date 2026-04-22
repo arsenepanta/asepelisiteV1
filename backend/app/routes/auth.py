@@ -7,7 +7,7 @@ import os
 
 router = APIRouter()
 
-pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
+pwd_context = CryptContext(schemes=["argon2"], deprecated="auto")
 
 SECRET_KEY = os.getenv("SECRET_KEY", "asepeli-secret-key-2026")
 ALGORITHM = "HS256"
