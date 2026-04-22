@@ -1,6 +1,4 @@
 import { notFound } from "next/navigation";
-import Navbar from "@/components/layout/Navbar";
-import Footer from "@/components/layout/Footer";
 import ServiceHero from "@/components/services/detail/ServiceHero";
 import ServiceDetails from "@/components/services/detail/ServiceDetails";
 import ServicePricing from "@/components/services/detail/ServicePricing";
@@ -21,13 +19,11 @@ export default async function ServicePage({
   if (!service) notFound();
 
   return (
-    <main>
-      <Navbar />
+    <div className="pt-20">
       <ServiceHero service={service} />
       <ServiceDetails service={service} />
       <ServicePricing service={service} />
       <ServiceCTA service={service} />
-      <Footer />
-    </main>
+    </div>
   );
 }

@@ -37,7 +37,7 @@ export default function RootLayout({
     <html lang="fr">
       <body className={`${poppins.variable} ${playfair.variable} font-poppins antialiased bg-white`}>
         <Header />
-        <main className="pt-20">
+        <main>
           {children}
         </main>
         <Footer />
