@@ -3,7 +3,7 @@ import { api } from "@/lib/api";
 import AdminDashboard from "@/components/admin/AdminDashboard";
 
 export default async function AdminPage() {
-  let demandes = [];
+  let demandes: Demande[] = [];
   
   try {
     demandes = await api.listerDemandes();
